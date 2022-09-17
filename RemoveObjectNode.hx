@@ -17,21 +17,16 @@ class RemoveObjectNode extends LogicNode {
 		if (object == null) return;
 		
 		if (removeChildren == false) {
-			if (object.children.length > 0) {
-				for (c in object.children) {
-					c.setParent(iron.Scene.active.root, false, keepChildrenTransforms);
-					
-					#if arm_physics
-					var rigidBody = c.getTrait(RigidBody);
-					if (rigidBody != null) rigidBody.syncTransform();
-					#end
-				}
-			} else {
-				object.remove();
+			for (c in object.children.copy()) {
+				c.setParent(iron.Scene.active.root, false, keepChildrenTransforms);
+											
+				#if arm_physics
+				var rigidBody = c.getTrait(RigidBody);
+				if (rigidBody != null) rigidBody.syncTransform();
+				#end
 			}
-		} else {
-			object.remove();
 		}
+		object.remove();
 		runOutput(0);
 	}
 }

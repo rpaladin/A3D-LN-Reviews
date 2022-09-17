@@ -1,13 +1,10 @@
 from arm.logicnode.arm_nodes import *
 
 class RemoveObjectNode(ArmLogicTreeNode):
-    """
-    Removes the given object from the scene.
-    In = Which input to execute the logic node Haxe code.
-    Object = Which object to remove.
-    Remove Children = Whether to remove given object's children as well.
-    Keep Children Transforms = Whether given object's children will maintain current transforms or revert to initial runtime transforms when un-parented.
-    """
+    """Description: This node will remove a scene object or a scene object and its children.
+    @[OBJECT] Object: Scene object to remove.
+    @[BOOL] Remove Children: Remove scene object's children too.
+    @[BOOL] Keep Children Transforms: Scene object's children will maintain current transforms when the scene object is removed, else children transforms revert to scene origin transforms."""
     bl_idname = 'LNRemoveObjectNode'
     bl_label = 'Remove Object'
     arm_version = 2
