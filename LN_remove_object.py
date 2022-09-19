@@ -5,7 +5,8 @@ class RemoveObjectNode(ArmLogicTreeNode):
     
     @input Object: Scene object to remove.
     @input Remove Children: Remove scene object's children too.
-    @input Keep Children Transforms: Scene object's children will maintain current transforms when the scene object is removed, else children transforms revert to scene origin transforms."""
+    @input Keep Children Transforms: Scene object's children will maintain current transforms when the scene object is removed, else children transforms revert to scene origin transforms.
+    """
     bl_idname = 'LNRemoveObjectNode'
     bl_label = 'Remove Object'
     arm_version = 2
