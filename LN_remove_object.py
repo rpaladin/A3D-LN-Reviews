@@ -1,7 +1,8 @@
 from arm.logicnode.arm_nodes import *
 
 class RemoveObjectNode(ArmLogicTreeNode):
-    """Description: This node will remove a scene object or a scene object and its children.
+    """This node will remove a scene object or a scene object and its children.
+    
     @input Object: Scene object to remove.
     @input Remove Children: Remove scene object's children too.
     @input Keep Children Transforms: Scene object's children will maintain current transforms when the scene object is removed, else children transforms revert to scene origin transforms."""
