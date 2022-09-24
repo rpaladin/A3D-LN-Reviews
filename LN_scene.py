@@ -23,7 +23,7 @@ class SceneNode(ArmLogicVariableNodeMixin, ArmLogicTreeNode):
     def arm_init(self, context):
         self.add_output('ArmDynamicSocket', 'Scene', is_var=True)
 
-    def draw_buttons(self, context, layout):
+    def draw_content(self, context, layout):
         layout.prop_search(self, 'property0', bpy.data, 'scenes', icon='NONE', text='')
 
     def synchronize_from_master(self, master_node: ArmLogicVariableNodeMixin):
